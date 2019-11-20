@@ -1,6 +1,6 @@
 package com.NationalScholarship.model;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -19,19 +19,7 @@ public class stateNodal {
 	private String state_name;
 	private String state_username;
 	private String state_password;
-	@OneToMany
-	@JoinColumn(name="state_name")
-	private List<Institute> instlist=new ArrayList<Institute>();
-	
-	
-	
-	
-	public List<Institute> getInstlist() {
-		return instlist;
-	}
-	public void setInstlist(List<Institute> instlist) {
-		this.instlist = instlist;
-	}
+
 	public String getState_name() {
 		return state_name;
 	}

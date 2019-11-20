@@ -17,8 +17,7 @@ import javax.persistence.TemporalType;
 public class StudentLoginDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String student_id;
+	private String student_username;
 	private String student_name;
 	private String student_gender;
 	private String student_state_domicile;
@@ -27,17 +26,28 @@ public class StudentLoginDetails {
 	private Date student_dob;
 	private String student_mobile_number;
 	private String student_email;
+	
 	@OneToOne
 	@JoinColumn(name="inst_code")
-	private Institute student_institute_code;
+	private Institute institute;
 	
 	private String student_aadhar_number;
 	private String student_password;
-	public String getStudent_id() {
-		return student_id;
+	private String status;
+	
+	
+	
+	public String getStatus() {
+		return status;
 	}
-	public void setStudent_id(String student_id) {
-		this.student_id = student_id;
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getStudent_username() {
+		return student_username;
+	}
+	public void setStudent_username(String student_username) {
+		this.student_username = student_username;
 	}
 	public String getStudent_name() {
 		return student_name;
@@ -81,11 +91,13 @@ public class StudentLoginDetails {
 	public void setStudent_email(String student_email) {
 		this.student_email = student_email;
 	}
-	public Institute getStudent_institute_code() {
-		return student_institute_code;
+	
+	
+	public Institute getInstitute() {
+		return institute;
 	}
-	public void setStudent_institute_code(Institute student_institute_code) {
-		this.student_institute_code = student_institute_code;
+	public void setInstitute(Institute institute) {
+		this.institute = institute;
 	}
 	public String getStudent_aadhar_number() {
 		return student_aadhar_number;
@@ -102,14 +114,8 @@ public class StudentLoginDetails {
 	public StudentLoginDetails() {
 		super();
 	}
-	@Override
-	public String toString() {
-		return "StudentLoginDetails [student_id=" + student_id + ", student_name=" + student_name + ", student_gender="
-				+ student_gender + ", student_state_domicile=" + student_state_domicile + ", student_district="
-				+ student_district + ", student_dob=" + student_dob + ", student_mobile_number=" + student_mobile_number
-				+ ", student_email=" + student_email + ", student_institute_code=" + student_institute_code
-				+ ", student_aadhar_number=" + student_aadhar_number + ", student_password=" + student_password + "]";
-	}
+	
+	
 	
 	
 	

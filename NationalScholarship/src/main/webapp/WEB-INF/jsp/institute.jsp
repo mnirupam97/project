@@ -12,10 +12,13 @@
 <H1>REGISTER INSTITUTE HERE</H1>
 <form action="instituteProcess.do" modelAttribute="Institute" method="post">
 	<table>
+	<tr><th>INSTITUTE CODE:</th><td><input type="text" name="inst_code" id="inst_code"></td>
+</tr>
+	
 	<tr><th>INSTITUTE NAME:</th><td><input type="text" name="inst_name" id="inst_name"></td>
 </tr>
 	<TR><th>STATE:</th>
-		<TD><select name="statename" ID="statename">
+		<TD><select name="inst_state" ID="inst_state">
 
 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -156,6 +159,8 @@
 	</select></TD>
 
 <tr><th>YEAR IN WHICH ADDMISSION STARTED:</th><TD><INPUT TYPE="TEXT" NAME="inst_year_adm_starT" id="inst_year_adm_starT" ><TD></tr>
+
+<tr><th>Username:</th><TD><INPUT TYPE="text" NAME="inst_username" id="inst_username"><TD></tr>
 	
 <tr><th>PASSWORD:</th><TD><INPUT TYPE="password" NAME="inst_password" id="inst_password"><TD></tr>
 	

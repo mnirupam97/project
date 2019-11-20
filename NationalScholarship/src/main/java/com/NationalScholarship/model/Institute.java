@@ -2,6 +2,7 @@ package com.NationalScholarship.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,13 +15,8 @@ public class Institute {
 	
 	@Id
 	private String inst_code;
-	
-	@ManyToOne
-	@JoinColumn(name="state_name")
-	private stateNodal stn;
-	
-	//private String statename;
-	
+	@Column(unique=true)
+	private String inst_username;
 	private String inst_name;
 	private String inst_state;
 	private String inst_district;
@@ -38,8 +34,15 @@ public class Institute {
 	private String inst_principal_name;
 	private String inst_contact_number;
 	private String inst_college_phone;
+	private String inst_approval_status;
 	
 	
+	public String getInst_approval_status() {
+		return inst_approval_status;
+	}
+	public void setInst_approval_status(String inst_approval_status) {
+		this.inst_approval_status = inst_approval_status;
+	}
 	public String getInst_code() {
 		return inst_code;
 	}
@@ -47,16 +50,10 @@ public class Institute {
 		this.inst_code = inst_code;
 	}
 	
-	
-	public stateNodal getStn() {
-		return stn;
-	}
-	public void setStn(stateNodal stn) {
-		this.stn = stn;
-	}
 	public String getInst_state() {
 		return inst_state;
 	}
+	
 	public void setInst_state(String inst_state) {
 		this.inst_state = inst_state;
 	}
@@ -153,20 +150,33 @@ public class Institute {
 	public void setInst_college_phone(String inst_college_phone) {
 		this.inst_college_phone = inst_college_phone;
 	}
+	
+	
+	
+	public String getInst_username() {
+		return inst_username;
+	}
+	public void setInst_username(String inst_username) {
+		this.inst_username = inst_username;
+	}
 	public Institute() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Institute [inst_code=" + inst_code + ", stn=" + stn + ", inst_name=" + inst_name + ", inst_state="
-				+ inst_state + ", inst_district=" + inst_district + ", inst_dice_code=" + inst_dice_code
-				+ ", inst_location=" + inst_location + ", inst_type=" + inst_type + ", inst_aff_uni_state="
-				+ inst_aff_uni_state + ", inst_aff_uni_board=" + inst_aff_uni_board + ", inst_year_adm_starT="
-				+ inst_year_adm_starT + ", inst_password=" + inst_password + ", inst_estab_cert=" + inst_estab_cert
-				+ ", inst_uni_affil_cert=" + inst_uni_affil_cert + ", inst_address=" + inst_address
-				+ ", inst_principal_name=" + inst_principal_name + ", inst_contact_number=" + inst_contact_number
-				+ ", inst_college_phone=" + inst_college_phone + "]";
+		return "Institute [inst_code=" + inst_code + ", inst_name=" + inst_name + ", inst_state=" + inst_state + ", inst_district=" + inst_district
+				+ ", inst_dice_code=" + inst_dice_code + ", inst_location=" + inst_location + ", inst_type=" + inst_type
+				+ ", inst_aff_uni_state=" + inst_aff_uni_state + ", inst_aff_uni_board=" + inst_aff_uni_board
+				+ ", inst_year_adm_starT=" + inst_year_adm_starT + ", inst_username=" + inst_username
+				+ ", inst_password=" + inst_password + ", inst_estab_cert=" + inst_estab_cert + ", inst_uni_affil_cert="
+				+ inst_uni_affil_cert + ", inst_address=" + inst_address + ", inst_principal_name="
+				+ inst_principal_name + ", inst_contact_number=" + inst_contact_number + ", inst_college_phone="
+				+ inst_college_phone + "]";
 	}
+	
+	
+	
+	
 	
 	
 	

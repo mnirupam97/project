@@ -13,8 +13,9 @@ public class basicScholarshipRegistration {
 	@Id
 	 private String student_aadhar_number ;
 	 @OneToOne
-	@JoinColumn(name="student_id")
-	private StudentLoginDetails student_id;
+	 @JoinColumn(name="student_username")
+	 private StudentLoginDetails studentLoginDetails;
+	 
 	 private String scholarship_applied_for ;
 	 private String student_religion ;
 	 private String student_caste ;
@@ -26,13 +27,11 @@ public class basicScholarshipRegistration {
 	 private String student_martial_status ;
 	 private String student_parents_profession ;
 	
-	
-	
-	public StudentLoginDetails getStudent_id() {
-		return student_id;
+	public StudentLoginDetails getStudentLoginDetails() {
+		return studentLoginDetails;
 	}
-	public void setStudent_id(StudentLoginDetails student_id) {
-		this.student_id = student_id;
+	public void setStudentLoginDetails(StudentLoginDetails studentLoginDetails) {
+		this.studentLoginDetails = studentLoginDetails;
 	}
 	public String getScholarship_applied_for() {
 		return scholarship_applied_for;
@@ -105,14 +104,16 @@ public class basicScholarshipRegistration {
 	}
 	@Override
 	public String toString() {
-		return "basicScholarshipRegistration [student_aadhar_number=" + student_aadhar_number + ", student_id="
-				+ student_id + ", scholarship_applied_for=" + scholarship_applied_for + ", student_religion="
+		return "basicScholarshipRegistration [student_aadhar_number=" + student_aadhar_number + ", studentLoginDetails="
+				+ studentLoginDetails + ", scholarship_applied_for=" + scholarship_applied_for + ", student_religion="
 				+ student_religion + ", student_caste=" + student_caste + ", student_father_name=" + student_father_name
 				+ ", student_family_income=" + student_family_income + ", student_is_disabled=" + student_is_disabled
 				+ ", student_type_disability=" + student_type_disability + ", student_percentage_disability="
 				+ student_percentage_disability + ", student_martial_status=" + student_martial_status
 				+ ", student_parents_profession=" + student_parents_profession + "]";
 	}
+	
+	
 	
 	 
 	 

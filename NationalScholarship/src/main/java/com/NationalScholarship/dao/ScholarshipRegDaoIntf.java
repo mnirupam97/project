@@ -1,6 +1,7 @@
 package com.NationalScholarship.dao;
 
 import com.NationalScholarship.model.Institute;
+import com.NationalScholarship.model.ScholarshipRegistrationDocs;
 import com.NationalScholarship.model.StudentLoginDetails;
 import com.NationalScholarship.model.basicScholarshipRegistration;
 import com.NationalScholarship.model.student10thDetails;
@@ -21,5 +22,8 @@ public interface ScholarshipRegDaoIntf {
 	public boolean addInstitute(Institute inst );
 
 	public boolean instituteRegister(Institute inst);
-	   
+	
+	public StudentLoginDetails validateUser(StudentLoginDetails sld);
+	
+	public boolean uploadDocuments(ScholarshipRegistrationDocs srd);
 }

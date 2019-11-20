@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.NationalScholarship.dao.ScholarshipRegDaoIntf;
 import com.NationalScholarship.model.Institute;
+import com.NationalScholarship.model.ScholarshipRegistrationDocs;
 import com.NationalScholarship.model.StudentLoginDetails;
 import com.NationalScholarship.model.basicScholarshipRegistration;
 import com.NationalScholarship.model.stateNodal;
@@ -36,33 +37,22 @@ public class ScholarshipRegServiceImpl implements ScholarshipRegServiceIntf {
 		}
 
 		public boolean instituteRegister(Institute inst) {
-			/*boolean flag1=false;
-			boolean flag=false;
-			boolean flag2=scholRegDao.instituteRegister(inst);
-			stateNodal stn=new stateNodal();
-			if(stn.getInstlist().add(inst))
-			{
-				flag1=true;
-			}
-			if(flag1&&flag2)
-			{
-				 flag=true;
-			}
 			
-			return flag;*/
 			return scholRegDao.instituteRegister(inst);
 		}
 
-		/*public boolean addInstitute(Institute inst) {
-			boolean flag=false;
-			stateNodal stn=new stateNodal();
-			if(stn.getInstlist().add(inst))
-			{
-				flag=true;
-			}
+		public StudentLoginDetails validateUser(StudentLoginDetails sld) {
 			
-			return flag;
-		}*/
+			return scholRegDao.validateUser(sld);
+		}
+
+		public boolean uploadDocuments(ScholarshipRegistrationDocs srd) {
+
+			return scholRegDao.uploadDocuments(srd);
+		}
+		
+		
+
 
 	}
 

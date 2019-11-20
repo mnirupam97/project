@@ -7,10 +7,13 @@ import javax.persistence.Persistence;
 import org.springframework.stereotype.Repository;
 
 import com.NationalScholarship.model.Institute;
+import com.NationalScholarship.model.ScholarshipRegistrationDocs;
 import com.NationalScholarship.model.StudentLoginDetails;
 import com.NationalScholarship.model.basicScholarshipRegistration;
 import com.NationalScholarship.model.student10thDetails;
 import com.NationalScholarship.model.student12thDetails;
+
+
 
 @Repository("scholRegDao")
 public class ScholarshipRegDaoImpl implements ScholarshipRegDaoIntf {
@@ -118,6 +121,45 @@ public class ScholarshipRegDaoImpl implements ScholarshipRegDaoIntf {
 			return result;
 			
 		}
+
+	public StudentLoginDetails validateUser(StudentLoginDetails sld) {
+	
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em = emf.createEntityManager();
+		//User f =null;
+		StudentLoginDetails studl=null;
+		try{
+			studl=(StudentLoginDetails)em.createQuery("SELECT s FROM StudentLoginDetails s WHERE s.student_username=:uname and s.student_password=:pwd")
+		         .setParameter("uname", sld.getStudent_username())
+		         .setParameter("pwd",sld.getStudent_password())
+		         .getSingleResult();
+		}
+		catch(Exception e) {System.out.println(e); }
+		em.close();
+		System.out.println(studl);
+		return studl ;
+
+	}
+
+	public boolean uploadDocuments(ScholarshipRegistrationDocs srd) {
+		boolean result=false;
+		try{
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(srd);
+		em.getTransaction().commit();
+		result=true;
+		
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		return result;
+	}
 	}
 	
 		

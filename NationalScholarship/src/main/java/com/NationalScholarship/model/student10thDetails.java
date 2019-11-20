@@ -12,9 +12,9 @@ public class student10thDetails {
 	
 	@Id
 	private String student_10_roll_number;
-	@OneToOne
-	@JoinColumn(name="student_id")
-	private StudentLoginDetails student_id;
+	 @OneToOne
+	@JoinColumn(name="student_username")
+	private StudentLoginDetails studentLoginDetails;
 	private String student_board_name;
 	private String student_passing_year;
 	private String student_percentage;
@@ -25,13 +25,11 @@ public class student10thDetails {
 		this.student_10_roll_number = student_10_roll_number;
 	}
 	
-	
-	
-	public StudentLoginDetails getStudent_id() {
-		return student_id;
+	public StudentLoginDetails getStudentLoginDetails() {
+		return studentLoginDetails;
 	}
-	public void setStudent_id(StudentLoginDetails student_id) {
-		this.student_id = student_id;
+	public void setStudentLoginDetails(StudentLoginDetails studentLoginDetails) {
+		this.studentLoginDetails = studentLoginDetails;
 	}
 	public String getStudent_board_name() {
 		return student_board_name;
@@ -54,9 +52,9 @@ public class student10thDetails {
 	
 	@Override
 	public String toString() {
-		return "student10thDetails [student_10_roll_number=" + student_10_roll_number + ", student_id=" + student_id
-				+ ", student_board_name=" + student_board_name + ", student_passing_year=" + student_passing_year
-				+ ", student_percentage=" + student_percentage + "]";
+		return "student10thDetails [student_10_roll_number=" + student_10_roll_number + ", studentLoginDetails="
+				+ studentLoginDetails + ", student_board_name=" + student_board_name + ", student_passing_year="
+				+ student_passing_year + ", student_percentage=" + student_percentage + "]";
 	}
 	public student10thDetails() {
 		super();

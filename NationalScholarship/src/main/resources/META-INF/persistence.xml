@@ -11,8 +11,8 @@
            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
            <property name="javax.persistence.jdbc.user" value="project"/>
            <property name="javax.persistence.jdbc.password" value="project"/>
-             <property name="hibernate.hbm2ddl.auto" value="create"/>  
-               <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+             <!-- <property name="hibernate.hbm2ddl.auto" value="create"/>   -->
+              <!--  <property name="hibernate.hbm2ddl.auto" value="create"/> -->
               <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>

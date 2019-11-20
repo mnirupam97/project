@@ -2,16 +2,19 @@ package com.NationalScholarship.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="scholarship_registration_docs")
 public class ScholarshipRegistrationDocs {
-
 	@Id
-	private String stu_doc_id;
-	private String stu_domicile_cert ;
 	private String stu_photo ;
+	 @OneToOne
+		@JoinColumn(name="student_username")
+	private StudentLoginDetails studentLoginDetails;
+	private String stu_domicile_cert ;
 	private String stu_institute_idcard ;
 	private String stu_caste_income_cert ;
 	private String stu_previous_year_mark ;
@@ -21,11 +24,13 @@ public class ScholarshipRegistrationDocs {
 	private String stu_10th_markshhet ;
 	private String stu_12th_marksheet ;
 	private String image;
-	public String getStu_doc_id() {
-		return stu_doc_id;
+
+	
+	public StudentLoginDetails getStudentLoginDetails() {
+		return studentLoginDetails;
 	}
-	public void setStu_doc_id(String stu_doc_id) {
-		this.stu_doc_id = stu_doc_id;
+	public void setStudentLoginDetails(StudentLoginDetails studentLoginDetails) {
+		this.studentLoginDetails = studentLoginDetails;
 	}
 	public String getStu_domicile_cert() {
 		return stu_domicile_cert;
@@ -98,14 +103,15 @@ public class ScholarshipRegistrationDocs {
 	}
 	@Override
 	public String toString() {
-		return "ScholarshipRegistrationDocs [stu_doc_id=" + stu_doc_id + ", stu_domicile_cert=" + stu_domicile_cert
-				+ ", stu_photo=" + stu_photo + ", stu_institute_idcard=" + stu_institute_idcard
+		return "ScholarshipRegistrationDocs [stu_photo=" + stu_photo + ", studentLoginDetails=" + studentLoginDetails
+				+ ", stu_domicile_cert=" + stu_domicile_cert + ", stu_institute_idcard=" + stu_institute_idcard
 				+ ", stu_caste_income_cert=" + stu_caste_income_cert + ", stu_previous_year_mark="
 				+ stu_previous_year_mark + ", stu_fee_receipt_current_year=" + stu_fee_receipt_current_year
 				+ ", stu_bank_passbook=" + stu_bank_passbook + ", stu_aadhar_card=" + stu_aadhar_card
 				+ ", stu_10th_markshhet=" + stu_10th_markshhet + ", stu_12th_marksheet=" + stu_12th_marksheet
 				+ ", image=" + image + "]";
 	}
+	
 	
 	
 	

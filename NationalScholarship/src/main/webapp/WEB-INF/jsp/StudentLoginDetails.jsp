@@ -118,13 +118,14 @@
   <TR><TH>EMAIL ID:</TH><TD><INPUT TYPE="email" name="student_email" ID="student_email"></INPUT></TD></TR>
   
   
-  <TR><th>INSITUTE CODE:</th><td><select name="student_institute_code" ID="student_institute_code">
- <option value="DYP101">DYP101</option></select>
+  <TR><th>Institute Code:</th><TD><INPUT TYPE="TEXT" name="student_institute_code" ID="student_institute_code"></INPUT></TD>
+  </TR>
   </td>
   </tr>
 <TR><th>AADHAR NUMBER:</th><TD><INPUT TYPE="TEXT" name="student_aadhar_number" ID="student_aadhar_number"></INPUT></TD>
   </TR>
-
+<TR><th>Username:</th><TD><INPUT TYPE="TEXT" name="student_username" ID="student_username"></INPUT></TD>
+  </TR>
 
 <TR><TH>PASSWORD:</TH><TD><INPUT TYPE="PASSWORD" name="student_password" id="student_password"></INPUT></TD></TR></tr>
 <TR>
