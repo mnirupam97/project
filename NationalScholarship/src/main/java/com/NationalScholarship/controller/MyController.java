@@ -225,9 +225,11 @@ public class MyController {
 		  public ModelAndView uploadDoc(HttpServletRequest request, HttpServletResponse response,HttpSession session, @ModelAttribute("ScholarshipRegistrationDocs") ScholarshipRegistrationDocs srd,@ModelAttribute("StudentLoginDetails")StudentLoginDetails sld, @RequestParam("file") MultipartFile files[]) {
 			StudentLoginDetails sld1  = new StudentLoginDetails();
 			String student_username=(String) session.getAttribute("student_username");
+			System.out.println("aaa:"+student_username);
+			
 			sld1.setStudent_username(student_username);
 			srd.setStudentLoginDetails(sld);
-			  String username = sld.getStudent_username();
+			  String username = student_username; //sld.getStudent_username();
 					for (int i = 0; i < files.length; i++) {
 						String filename="";
 						if(i==0)
